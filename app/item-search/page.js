@@ -23,7 +23,7 @@ function ItemSearch() {
       setSearchResult([...data].filter((item) => item.name.includes(value)));
     }
   };
-  
+
   return (
     <div>
       <label htmlFor="search">Search:</label>
@@ -42,6 +42,11 @@ function ItemSearch() {
             <td>{item.name}</td>
           </tr>
         ))}
+        {searchResult.length === 0 && (
+          <tr>
+            <td>No result found</td>
+          </tr>
+        )}
       </table>
     </div>
   );
