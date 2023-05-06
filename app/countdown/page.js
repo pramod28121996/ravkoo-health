@@ -4,17 +4,25 @@ import React, { useRef, useState } from "react";
 import styles from "./page.module.css";
 
 function Countdown() {
+  //useRef declaration for access input controls.
+  //Reason behind ti taking useRef instead of state is we want the time start when submit button get hit;
   const hourInput = useRef(0);
   const minuteInput = useRef(0);
   const secondInput = useRef(0);
+
+  //State declaration
   const [time, setTime] = useState({ h: 0, m: 0, s: 0 });
 
+  //This function execute when time is over
+  //Reason to implement this function is to reinitialize timer values.
   const handleStopCountDown = () => {
     setTime({ h: 0, m: 0, s: 0 });
     hourInput.current.value = "";
     minuteInput.current.value = "";
     secondInput.current.value = "";
   };
+
+  //Function calling
   const handleOnClick = () => {
     setTime({
       h: parseInt(hourInput.current.value === "" ? 0 : hourInput.current.value),
@@ -26,6 +34,7 @@ function Countdown() {
       ),
     });
   };
+  
   return (
     <div>
       <div className={styles.main}>
