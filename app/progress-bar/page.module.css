@@ -1,0 +1,12 @@
+.main {
+  padding: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.progress {
+  height: 50px;
+}
+.text {
+  margin-left: 15px;
+}
